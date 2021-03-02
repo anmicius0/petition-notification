@@ -35,15 +35,14 @@ def main():
         petitions.append(data[i])
 
     # Initialize Telegram bot
-    bot = telebot.TeleBot(
-        "1641231483:AAG2Az4ZLh6QcbNNmOif5jOuMH4WO31o390", parse_mode=None)
+    bot = telebot.TeleBot(os.getenv("BOTID"), parse_mode=None)
 
     # Send posts
     for i in petitions:
         title = i["標題"]
         context = i["提議內容"]
         url = i["網址"]
-        bot.send_message("@votetw", f"#{title}\n\n {context}\n\n {url}", )
+        bot.send_message("@votetw", f"{title}\n\n {context}\n\n {url}", )
 
 
 if __name__ == "__main__":
