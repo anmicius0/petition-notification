@@ -1,11 +1,20 @@
+import os
 import json
 import urllib
 import requests
 import telebot
+
+from dotenv import load_dotenv
+from pathlib import Path
 from datetime import datetime, date, timedelta
 
 
 def main():
+
+    # Load env variable
+    env_path = Path('.') / '.env'
+    load_dotenv(dotenv_path=env_path)
+
     # Get the json file
     url = "https://join.gov.tw/toOpenData/ey/idea"
     response = requests.get(url)
