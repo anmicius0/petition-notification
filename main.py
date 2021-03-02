@@ -9,7 +9,7 @@ from pathlib import Path
 from datetime import datetime, date, timedelta
 
 
-def main():
+def main(request):
 
     # Load env variable
     env_path = Path('.') / '.env'
